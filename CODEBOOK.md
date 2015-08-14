@@ -13,17 +13,11 @@ The run_analysis.R script performs the following steps to clean the data:
 1.	Read train and test data and append the train and test data.
 Read data
 •	x_train.txt - stored in trainData variable (561 columns, 7352 rows)
-
 •	y_train.txt and - stored in trainLabel variable (1 column, 7352 rows)
-
 •	subject_train.txt - stored in trainSubject variable (1 column, 7352 rows)
-
 •	x_test.txt - stored in testData variable (561 columns, 2947 rows)
-
 •	y_test.txt and - stored in testLabel variable (1 column, 2947 rows)
-
 •	subject_test.txt - stored in testSubject variable (1 column, 2947 rows)
-
 Append data
 •	Append trainData and testData - stored in mergeData variable (561 columns, 10299 rows).
 •	Append trainLabel and testLabel - stored in mergeLabel variable (1 column, 10299 rows).
