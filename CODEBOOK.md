@@ -7,27 +7,29 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
  The data for the project:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-•The run_analysis.R script performs the following steps to clean the data:
+The run_analysis.R script performs the following steps to clean the data:
 
 1.Read train and test data and append the train and test data.
 Read data
 
-X_train.txt - stored in trainData variable
+•X_train.txt - stored in trainData variable
 
-y_train.txt and - stored in trainLabel variable
+•y_train.txt and - stored in trainLabel variable
 
-subject_train.txt - stored in trainSubject variable
+•subject_train.txt - stored in trainSubject variable
 
-X_test.txt - stored in testData variable
+•X_test.txt - stored in testData variable
 
-y_test.txt and - stored in testLabel variable
+•y_test.txt and - stored in testLabel variable
 
-subject_test.txt - stored in testSubject variable
+•subject_test.txt - stored in testSubject variable
 
 Append data
-Append trainData and testData - stored in mergeData variable.
-Append trainLabel and testLabel - stored in mergeLabel variable.
-Append trainSubject and testSubject - stored in mergeSubject variable.
+•Append trainData and testData - stored in mergeData variable.
+
+•Append trainLabel and testLabel - stored in mergeLabel variable.
+
+•Append trainSubject and testSubject - stored in mergeSubject variable.
 
 2. 
 iv.Read the features.txt file from the "/data" folder and store the data in a variable called features. We only extract the measurements on the mean and standard deviation. This results in a 66 indices list. We get a subset of joinData with the 66 corresponding columns.
