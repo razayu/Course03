@@ -11,11 +11,17 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 1.Read train and test data and append the train and test data.
 Read data
+
 X_train.txt - stored in trainData variable
+
 y_train.txt and - stored in trainLabel variable
+
 subject_train.txt - stored in trainSubject variable
+
 X_test.txt - stored in testData variable
+
 y_test.txt and - stored in testLabel variable
+
 subject_test.txt - stored in testSubject variable
 
 Append data
