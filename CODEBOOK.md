@@ -1,16 +1,16 @@
 Getting and Cleaning Data Course Project CodeBook
 
-This file describes the variables, the data, and any transformations or work that I have performed to clean up the data. 
+This file describes the variables, the data, and data transformations performed to clean up the data. 
 
-•The site where the data was obtained:
+The site where the data was obtained:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
- The data for the project:
+The data for the project:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 The run_analysis.R script performs the following steps to clean the data:
 
 1.Read train and test data and append the train and test data.
-Read data
+  Read data
   •x_train.txt - stored in trainData variable (561 columns, 7352 rows)
   •y_train.txt and - stored in trainLabel variable (1 column, 7352 rows)
   •subject_train.txt - stored in trainSubject variable (1 column, 7352 rows)
@@ -18,7 +18,7 @@ Read data
   •y_test.txt and - stored in testLabel variable (1 column, 2947 rows)
   •subject_test.txt - stored in testSubject variable (1 column, 2947 rows)
 
-Append data
+  Append data
   •Append trainData and testData - stored in mergeData variable (561 columns, 10299 rows).
   •Append trainLabel and testLabel - stored in mergeLabel variable (1 column, 10299 rows).
   •Append trainSubject and testSubject - stored in mergeSubject variable (1 column, 10299 rows).
@@ -44,7 +44,7 @@ Append data
   •write allData data to a merged_data.txt file
 
 5. Create another clean data file with summarized allData information with the average of each measurement for each activity    and each subject.
-  •create a 66 columns and 180 rows data frame (result variable) to store the average measurement numbers for each activity and each     subject.
+  •create a 66 columns and 180 rows data frame (result variable) to store the average measurement numbers for each activity     and each subject.
   •180 rows is combination of 30 subjects and 6 activities.
   •a nested 2 loops is used to calculate the average numbers.
   •write the summarized data to a merged_data_mean.txt file.
