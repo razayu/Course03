@@ -11,37 +11,40 @@ The run_analysis.R script performs the following steps to clean the data:
 
 1.Read train and test data and append the train and test data.
 Read data
-
-  •X_train.txt - stored in trainData variable
-  •y_train.txt and - stored in trainLabel variable
-  •subject_train.txt - stored in trainSubject variable
-  •X_test.txt - stored in testData variable
-  •y_test.txt and - stored in testLabel variable
-  •subject_test.txt - stored in testSubject variable
+  •x_train.txt - stored in trainData variable (561 columns, 7352 rows)
+  •y_train.txt and - stored in trainLabel variable (1 column, 7352 rows)
+  •subject_train.txt - stored in trainSubject variable (1 column, 7352 rows)
+  •x_test.txt - stored in testData variable (561 columns, 2947 rows)
+  •y_test.txt and - stored in testLabel variable (1 column, 2947 rows)
+  •subject_test.txt - stored in testSubject variable (1 column, 2947 rows)
 
 Append data
+  •Append trainData and testData - stored in mergeData variable (561 columns, 10299 rows).
+  •Append trainLabel and testLabel - stored in mergeLabel variable (1 column, 10299 rows).
+  •Append trainSubject and testSubject - stored in mergeSubject variable (1 column, 10299 rows).
 
-  •Append trainData and testData - stored in mergeData variable.
+2. Read features data, which are column names for measurements and get subset of trainData that are measurements on mean and    standard deviation only.
+  •features.txt - stored in features variable (561 measurements)
+  •mean_std_only variable - holds the features with mean and standard deviation measurements only
+  •subset of trainData with mean and standard deviation measurement only - restored in mergeData variable (66 measurements).
+  •use the 66 measurements as column names for mergeData
 
-  •Append trainLabel and testLabel - stored in mergeLabel variable.
+3. Read activity labels data
+  •activity_labels.txt - stored in activity variable (6 activities)
+  •transform the values of mergeLabel according to the activity.
+  •change mergeLabel column name to 'activity'
 
-  •Append trainSubject and testSubject - stored in mergeSubject variable.
+4. Merge all 3 data files together to get a clean allData data frame (68 columns, 10299 rows) and write to a merged_data.txt    file.
+  •change mergeSubject column name to 'subject'
+  •mergeSubject data file + mergeLabel data file + mergeData data file
+  •the final allData contains the following columns
+      1 column subject - contains integers that range from 1 to 30 inclusive
+      1 column activity - contains 6 kinds of activity names
+      66 measurements columns - contain measurements that range from -1 to 1 exclusive
+  •write allData data to a merged_data.txt file
 
-2. 
-iv.Read the features.txt file from the "/data" folder and store the data in a variable called features. We only extract the measurements on the mean and standard deviation. This results in a 66 indices list. We get a subset of joinData with the 66 corresponding columns.
-
-3.
-vi.Read the activity_labels.txt file from the "./data"" folder and store the data in a variable called activity.
-vii.Clean the activity names in the second column of activity. We first make all names to lower cases. If the name has an underscore between letters, we remove the underscore and capitalize the letter immediately after the underscore.
-
-4.
-viii.Transform the values of joinLabel according to the activity data frame.
-
-ix.Combine the joinSubject, joinLabel and joinData by column to get a new cleaned 10299x68 data frame, cleanedData. Properly name the first two columns, "subject" and "activity". The "subject" column contains integers that range from 1 to 30 inclusive; the "activity" column contains 6 kinds of activity names; the last 66 columns contain measurements that range from -1 to 1 exclusive.
-
-x.Write the cleanedData out to "merged_data.txt" file in current working directory.
-
-5. 
-xi.Finally, generate a second independent tidy data set with the average of each measurement for each activity and each subject. We have 30 unique subjects and 6 unique activities, which result in a 180 combinations of the two. Then, for each combination, we calculate the mean of each measurement with the corresponding combination. So, after initializing the result data frame and performing the two for-loops, we get a 180x68 data frame.
-xii.Write the result out to "data_with_means.txt" file in current working directory. 
-
+5. Create another clean data file with summarized allData information with the average of each measurement for each activity    and each subject.
+  •create a 66 columns and 180 rows data frame (result variable) to store the average measurement numbers for each activity and each     subject.
+  •180 rows is combination of 30 subjects and 6 activities.
+  •a nested 2 loops is used to calculate the average numbers.
+  •write the summarized data to a merged_data_mean.txt file.
