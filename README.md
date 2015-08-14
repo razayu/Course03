@@ -1,6 +1,7 @@
 Getting and Cleaning Data Course Project
 
 This repository holds 4 files, as follows:
+
 1. README.md - THIS file which provides explanation on how all files are connected.
 
 2. run_analysis.R - R script that reads data files, cleans the data and finally produced a 
